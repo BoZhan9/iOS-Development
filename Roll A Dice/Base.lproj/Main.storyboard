@@ -1,24 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Roll_A_Dice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Dice5" translatesAutoresizingMaskIntoConstraints="NO" id="31m-UV-DXj">
+                                <rect key="frame" x="180" y="170" width="120" height="120"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Dice3" translatesAutoresizingMaskIntoConstraints="NO" id="SFW-G3-wyn">
+                                <rect key="frame" x="20" y="170" width="120" height="120"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Score = 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEu-GR-d2o">
+                                <rect key="frame" x="0.0" y="350" width="320" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OO8-m4-gqN">
+                                <rect key="frame" x="15" y="90" width="82" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Below 7"/>
+                                <connections>
+                                    <action selector="below7Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z9M-c2-uKY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEf-wO-Oi0">
+                                <rect key="frame" x="120" y="90" width="85" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Lucky 7"/>
+                                <connections>
+                                    <action selector="lucky7Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sv5-EK-aia"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nx1-dK-60f">
+                                <rect key="frame" x="220" y="90" width="85" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Above 7"/>
+                                <connections>
+                                    <action selector="above7Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3a7-ty-Arx"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OO8-m4-gqN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="3SK-rT-Wf6"/>
+                            <constraint firstItem="HEf-wO-Oi0" firstAttribute="leading" secondItem="OO8-m4-gqN" secondAttribute="trailing" constant="15" id="FSU-mo-CjW"/>
+                            <constraint firstItem="rEu-GR-d2o" firstAttribute="top" secondItem="31m-UV-DXj" secondAttribute="bottom" constant="50" id="IZy-ax-U1i"/>
+                            <constraint firstItem="nx1-dK-60f" firstAttribute="leading" secondItem="HEf-wO-Oi0" secondAttribute="trailing" constant="10" id="M8N-7j-zAU"/>
+                            <constraint firstItem="OO8-m4-gqN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="Q3A-Zu-K2d"/>
+                            <constraint firstItem="SFW-G3-wyn" firstAttribute="top" secondItem="OO8-m4-gqN" secondAttribute="bottom" constant="40" id="ROp-gL-yGR"/>
+                            <constraint firstItem="nx1-dK-60f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="U8f-Zp-Wbe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nx1-dK-60f" secondAttribute="trailing" constant="15" id="b8z-gK-Lv9"/>
+                            <constraint firstItem="nx1-dK-60f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="dGe-cK-MYe"/>
+                            <constraint firstItem="HEf-wO-Oi0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="pdM-mj-GWy"/>
+                            <constraint firstItem="HEf-wO-Oi0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="prm-3J-obh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imgOne" destination="SFW-G3-wyn" id="hLy-0G-lSB"/>
+                        <outlet property="imgTwo" destination="31m-UV-DXj" id="cz3-hX-hcA"/>
+                        <outlet property="lblScore" destination="rEu-GR-d2o" id="3U6-p3-Ib4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.75" y="92.957746478873247"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Dice3" width="75" height="75"/>
+        <image name="Dice5" width="75" height="75"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         if one + two == 7 {
             score += 7
         } else {
-            score -= 3
+            score -= 7
         }
         
         lblScore.text = "Score = \(score)"
